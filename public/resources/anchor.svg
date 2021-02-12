@@ -1,23 +1,26 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 282.86 343.96">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 386.85 386.85">
   <defs>
-    <clipPath id="clip-path" transform="translate(-287.06 -260.29)">
-      <rect x="287.06" y="329.36" width="141.43" height="274.89" style="fill: none"/>
+    <clipPath id="clip-path" transform="translate(-234.68 -236.87)">
+      <rect x="286.68" y="327.38" width="141.43" height="274.89" style="fill: none"/>
     </clipPath>
-    <clipPath id="clip-path-2" transform="translate(-287.06 -260.29)">
-      <rect x="428.49" y="329.36" width="141.43" height="274.89" style="fill: none"/>
+    <clipPath id="clip-path-2" transform="translate(-234.68 -236.87)">
+      <rect x="428.11" y="327.38" width="141.43" height="274.89" style="fill: none"/>
     </clipPath>
   </defs>
   <g>
-    <g id="_Mirror_Repeat_" data-name="&lt;Mirror Repeat&gt;">
-      <g style="clip-path: url(#clip-path)">
-        <path d="M428.49,604.25c-12.08-50-68.95-36.32-111.77-114.93-7.42-13.61-12.74-27.9-17.81-32.64-4.08,1.83-11.85,4.66-11.85,4.66l.8-59.9L334,441.09l-13.53,7.24s40.87,100.93,85.12,53.89c17-18.09,7.89-127.56,7.89-127.56H378.07l-3.54-25.1,37.91-2.83-1.14-10.5,3.25-3.08,13.94-3.79" transform="translate(-287.06 -260.29)"/>
+    <g>
+      <g id="_Mirror_Repeat_" data-name="&lt;Mirror Repeat&gt;">
+        <g style="clip-path: url(#clip-path)">
+          <path d="M428.11,602.27C416,552.29,359.16,566,316.34,487.34c-7.42-13.61-12.74-27.9-17.82-32.64-4.07,1.83-11.84,4.66-11.84,4.66l.8-59.9,46.18,39.65-13.53,7.24S361,547.28,405.25,500.24c17-18.09,7.89-127.56,7.89-127.56H377.69l-3.54-25.1,37.91-2.83-1.14-10.5,3.25-3.08,13.94-3.79" transform="translate(-234.68 -236.87)"/>
+        </g>
+      </g>
+      <g id="_Mirror_Repeat_2" data-name="&lt;Mirror Repeat&gt;">
+        <g style="clip-path: url(#clip-path-2)">
+          <path d="M428.11,602.27c12.08-50,68.94-36.32,111.76-114.93,7.42-13.61,12.74-27.9,17.82-32.64,4.07,1.83,11.84,4.66,11.84,4.66l-.79-59.9-46.18,39.65,13.53,7.24S495.22,547.28,451,500.24c-17-18.09-7.88-127.56-7.88-127.56h35.44l3.54-25.1-37.91-2.83,1.15-10.5L442,331.17l-13.93-3.79" transform="translate(-234.68 -236.87)"/>
+        </g>
       </g>
     </g>
-    <g id="_Mirror_Repeat_2" data-name="&lt;Mirror Repeat&gt;">
-      <g style="clip-path: url(#clip-path-2)">
-        <path d="M428.49,604.25c12.08-50,68.94-36.32,111.76-114.93,7.42-13.61,12.74-27.9,17.82-32.64,4.07,1.83,11.85,4.66,11.85,4.66l-.8-59.9-46.18,39.65,13.53,7.24s-40.87,100.93-85.13,53.89c-17-18.09-7.88-127.56-7.88-127.56H478.9l3.55-25.1-37.92-2.83,1.15-10.5-3.26-3.08-13.93-3.79" transform="translate(-287.06 -260.29)"/>
-      </g>
-    </g>
+    <path d="M428.27,258.31a36.26,36.26,0,1,0,36.25,36.26A36.25,36.25,0,0,0,428.27,258.31Zm0,55.31a19.06,19.06,0,1,1,19.06-19.05A19.05,19.05,0,0,1,428.27,313.62Z" transform="translate(-234.68 -236.87)"/>
   </g>
-  <path d="M428.65,260.29a36.26,36.26,0,1,0,36.25,36.26A36.25,36.25,0,0,0,428.65,260.29Zm0,55.31a19.06,19.06,0,1,1,19.06-19.05A19.05,19.05,0,0,1,428.65,315.6Z" transform="translate(-287.06 -260.29)"/>
+  <rect width="386.85" height="386.85" style="fill: none"/>
 </svg>

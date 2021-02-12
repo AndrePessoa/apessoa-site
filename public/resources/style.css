@@ -1,8 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  height: 200vh;
 }
+
+section:nth-child(1){ z-index: 10; }
+section:nth-child(2){ z-index: 9; }
 
 h1 {
   position: absolute;
@@ -22,6 +30,11 @@ h2 {
   font-size: 2em;
 }
 
+a{
+  color: white;
+  font-family: 'Comic Neue', Helvetica, sans-serif;
+}
+
 p {
   text-transform: uppercase;
   font-style: italic;
@@ -36,12 +49,62 @@ p.small {
   font-size: .8em;
 }
 
-#greeting{
-  text-align: center;
+#bottombar{
   position: absolute;
   bottom: 0;
-  margin: 10px 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+#godown{
+  color: white;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .1s;
+}
+
+#godown:hover {
+  color: rgb(183, 187, 241);
+}
+
+#godown .label {
+  padding: 5px 20px;
+}
+
+#greeting {
+  text-align: right;
+  margin-right: 30px;
+}
+
+#godown .anchor {
+  position: relative;
+  height: 50px;
+  width: 40px;
+  border-right: 1px solid;
+  padding: 10px 10px 0px;
+}
+
+#godown .anchor svg {
+  fill: white;
+}
+
+#godown .anchor.animate svg{
+  animation: anchor 1.2s;
+  animation-delay: .2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
 
 #island {
   width: 80vw;
@@ -82,7 +145,18 @@ section:nth-child(2){
   padding-left: 20vw;
 }
 
-#info a{
-  color: white;
-  font-family: 'Comic Neue', Helvetica, sans-serif;
+@keyframes anchor {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  99% {
+    fill: rgb(128, 128, 148);
+    transform: translate(0, 120vh) rotate(30deg);
+  }
+  100% {
+    fill: rgb(128, 128, 148);
+    transform: translate(0, 0) rotate(0);
+    opacity: 0;
+  }
 }

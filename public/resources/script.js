@@ -81,3 +81,10 @@ function tick(){
 }
 tick();
 
+// anchor
+
+const godownElem = document.querySelector("#godown");
+const anchorElem = document.querySelector(".anchor");
+godownElem.addEventListener('click', () => {
+  anchorElem.classList.add('animate');
+})

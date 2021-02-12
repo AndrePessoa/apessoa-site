@@ -14,11 +14,21 @@
             <h1>A. Pessoa</h1>  
             <div id="island">
                 <?php include("./resources/ilha.svg"); ?>
-            </div> 
-            <div id="greeting">
-            <p >Hi! Nice to see you here.</p>
-            <p class="small">(Here it was really lonely.)</p>
-            </div> 
+            </div>
+            <div id="bottombar">
+                <div id="greeting">
+                    <p >Hi! Nice to see you here.</p>
+                    <p class="small">(Here it was really lonely.)</p>
+                </div> 
+                <a id="godown" href="#info">
+                    <div class="anchor">
+                        <?php include("./resources/anchor.svg"); ?>
+                    </div> 
+                    <div class="label">
+                        Let's go!
+                    </div> 
+                </a> 
+            </div>
         </section>
         
         <section>
