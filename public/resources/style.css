@@ -7,6 +7,7 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   height: 200vh;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 section:nth-child(1){ z-index: 10; }
@@ -19,7 +20,7 @@ h1 {
   color: white;
   font-family: 'Bowlby One SC', Helvetica, sans-serif;
   text-align: center;
-  font-size: 2.4em;
+  font-size: 1.5em;
   margin: 20px 0;
 }
 
@@ -27,7 +28,7 @@ h2 {
   width: 100%;
   color: white;
   font-family: 'Bowlby One SC', Helvetica, sans-serif;
-  font-size: 2em;
+  font-size: 1.2em;
 }
 
 a{
@@ -41,18 +42,18 @@ p {
   width: 100%;
   color: white;
   font-family: 'Comic Neue', Helvetica, sans-serif;
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 10px 0;
 }
 
 p.small {
-  font-size: .8em;
+  font-size: .6em;
 }
 
 #bottombar{
   position: absolute;
   bottom: 0;
-  margin: 20px 0;
+  margin: 0 0 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,10 +89,11 @@ p.small {
 
 #godown .anchor {
   position: relative;
-  height: 50px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   border-right: 1px solid;
-  padding: 10px 10px 0px;
+  padding: 7px 7px;
+
 }
 
 #godown .anchor svg {
@@ -119,10 +121,11 @@ p.small {
 #island #Layer_5 {
   transform-origin: 41% 15%;
 }
+
 #driving{
   position: absolute;
   bottom: 0;
-  left: 5vw;
+  left: 0;
   width: 80vw;
   max-width: 350px;
   max-height: 70vh;
@@ -133,11 +136,11 @@ p.small {
   transform-origin: center 20%;
 }
 
-
 section {
   position: relative;
   background: linear-gradient(180deg, rgba(192,201,255,1) 19%, rgb(96 109 175) 79%);
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   min-width: 100vw;
   display: flex;
   align-items: center;
@@ -151,6 +154,14 @@ section:nth-child(2){
 #info {
   padding-left: 20vw;
 }
+
+
+@media screen and (min-width: 1440px) {
+  #driving{
+    left: 5vw;
+  }
+}
+
 
 @keyframes anchor {
   0% {
