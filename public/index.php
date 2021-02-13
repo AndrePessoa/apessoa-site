@@ -41,7 +41,7 @@
                 <p>If you want to know a little more about me, take a look on my profile.</p>
                 <p><a href="https://www.linkedin.com/in/andrepessoamendes/" rel=”noreferrer”>Linkedin</a></p>
                 <br>
-                <p>Thanks oy for coming so depth.</p>
+                <p>Thank you for coming so deep.</p>
                 <p>I hope see you soon again! = )</p>
             </div>
         </section>

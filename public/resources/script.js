@@ -1,3 +1,11 @@
+// Fix mobile 100vh issue
+function defineDocumentVH() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+window.addEventListener('resize', defineDocumentVH);
+defineDocumentVH();
+
 // Animate water line
 const islandTopElem = document.querySelector("#sand-high");
 const islandTopPoints = islandTopElem.getAttribute('d');
@@ -11,6 +19,9 @@ islandBottomElem.style= 'opacity: 0.05';
 
 const islandAnimatedElem = document.querySelector("#sand-animated");
 const islandAnimationOffset = offsetPathsValues(islandTopValues, islandBottomValues);
+
+const islandAnimatedLeaf1Elem = document.querySelector("#island #Layer_4");
+const islandAnimatedLeaf2Elem = document.querySelector("#island #Layer_5");
 
 function getPathValues(d){
   return d.split(/(?=[a-zA-Z,-])|(?<=[a-zA-Z,-])/gi);
@@ -48,6 +59,15 @@ function drawSeaWave(frame) {
   islandAnimatedElem.setAttribute('d', pathValues.join(''));
 }
 
+function drawLeaft(frame) {
+  const prop1 = getSinProportion(frame, 300);
+  const prop2 = getSinProportion(frame + 200, 400);
+  const rotate = 15 * prop1 * prop2 - 7.5; 
+
+  islandAnimatedLeaf1Elem.style.transform = `rotate(${rotate}deg)`;
+  islandAnimatedLeaf2Elem.style.transform = `rotate(${rotate}deg)`;
+}
+
 
 // animate underwater effect
 
@@ -74,6 +94,7 @@ function tick(){
   try {
     drawSeaWave(frame);
     drawDrivingEffect(frame);
+    drawLeaft(frame);
   } catch (error) {
     paused = true
   }
