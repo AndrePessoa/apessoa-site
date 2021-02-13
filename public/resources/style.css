@@ -112,6 +112,13 @@ p.small {
   max-height: 70vh;
 }
 
+#island #Layer_4 {
+  transform-origin: 43% 15%;
+}
+
+#island #Layer_5 {
+  transform-origin: 41% 15%;
+}
 #driving{
   position: absolute;
   bottom: 0;
