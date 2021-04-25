@@ -3,7 +3,18 @@ function defineDocumentVH() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
+const driving = document.getElementById('driving');
+function onScrollHandler() {
+  defineDocumentVH();
+  const winHeight = window.innerHeight;
+  const limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+  const prop = window.scrollY / limit;
+  const paralax = prop * winHeight - winHeight / 3;
+  driving.style = `bottom: ${paralax}px`;
+}
 window.addEventListener('resize', defineDocumentVH);
+window.addEventListener('scroll', onScrollHandler);
 defineDocumentVH();
 
 // Animate water line
@@ -18,10 +29,13 @@ const islandBottomValues = getPathValues(islandBottomPoints);
 islandBottomElem.style= 'opacity: 0.05';
 
 const islandAnimatedElem = document.querySelector("#sand-animated");
-const islandAnimationOffset = offsetPathsValues(islandTopValues, islandBottomValues);
+const islandWavesEffect = document.querySelector("#waves");
+const islandAnimationOffset = offsetPathsValues(islandTopValues, islandBottomValues).reverse();
 
 const islandAnimatedLeaf1Elem = document.querySelector("#island #Layer_4");
 const islandAnimatedLeaf2Elem = document.querySelector("#island #Layer_5");
+
+const islandAnimatedLeafsElems = document.querySelectorAll("#island #Layer_4 path, #island #Layer_5 path");
 
 function getPathValues(d){
   return d.split(/(?=[a-zA-Z,-])|(?<=[a-zA-Z,-])/gi);
@@ -49,23 +63,38 @@ function getSinProportion(frame, cycle){
 }
 
 function drawSeaWave(frame) {
-  const prop1 = getSinProportion(frame, 400);
-  const prop2 = getSinProportion(frame, 300);
-  const prop = prop1 * prop2;
 
-  const offset = islandAnimationOffset.map(val => val !== undefined ? val * prop : val);
-  const pathValues = offset.map((val, i) => val !== undefined ? Math.max((parseFloat(islandBottomValues[i]) + val),0).toFixed(2) : islandTopValues[i]);
+  function calcProp (i, total) {
+    const propTime = i / total;
+    const prop1 = getSinProportion(frame + 150 * propTime, 300);
+    const prop2 = getSinProportion(frame + 100 + 400 * propTime, 400);
+    return (.7 * prop1 * prop2);
+  }
+
+  islandWavesEffect.setAttribute('dx', (calcProp(1,1) * 14 - 7));
+  islandWavesEffect.setAttribute('dy', (calcProp(1,1) * 6 ));
+
+  const offset = islandAnimationOffset.map((val, i) => val !== undefined ? val * calcProp(i, islandAnimationOffset.length) : val);
+
+  const pathValues = offset.reverse().map((val, i) => val !== undefined ? Math.max((parseFloat(islandBottomValues[i]) + val),0).toFixed(2) : islandTopValues[i]);
 
   islandAnimatedElem.setAttribute('d', pathValues.join(''));
 }
 
 function drawLeaft(frame) {
-  const prop1 = getSinProportion(frame, 300);
-  const prop2 = getSinProportion(frame + 200, 400);
-  const rotate = 15 * prop1 * prop2 - 7.5; 
 
-  islandAnimatedLeaf1Elem.style.transform = `rotate(${rotate}deg)`;
-  islandAnimatedLeaf2Elem.style.transform = `rotate(${rotate}deg)`;
+  //islandAnimatedLeaf1Elem.style.transform = `rotate(${rotate}deg)`;
+  //islandAnimatedLeaf2Elem.style.transform = `rotate(${rotate}deg)`;
+
+  for (let index = 0; index < islandAnimatedLeafsElems.length; index++) {
+    const element = islandAnimatedLeafsElems[index];
+    const delay = 100 * index;
+    const prop1 = getSinProportion(frame + delay, 300);
+
+    const rotate = 15 * prop1 - 7.5; 
+
+    element.style.transform = `rotate(${rotate}deg)`;
+  }
 }
 
 

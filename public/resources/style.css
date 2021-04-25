@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 250%; /* Prevent font scaling in landscape */
 }
 
 body {
@@ -8,6 +9,7 @@ body {
   min-height: 100vh;
   height: 200vh;
   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-family: 'Coming Soon', Helvetica, sans-serif;
 }
 
 section:nth-child(1){ z-index: 10; }
@@ -29,21 +31,37 @@ h2 {
   color: white;
   font-family: 'Bowlby One SC', Helvetica, sans-serif;
   font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: .5em;
+  margin-bottom: 20px;
+}
+
+h3:not(:first-child) {
+  margin-top: 20px;
 }
 
 a{
   color: white;
-  font-family: 'Comic Neue', Helvetica, sans-serif;
+  font-family: 'Coming Soon', Helvetica, sans-serif;
 }
 
 p {
-  text-transform: uppercase;
   font-style: italic;
   width: 100%;
   color: white;
-  font-family: 'Comic Neue', Helvetica, sans-serif;
+  font-family: 'Coming Soon', Helvetica, sans-serif;
   font-size: 1em;
-  margin: 10px 0;
+  line-height: 1.5em;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 p.small {
@@ -107,7 +125,6 @@ p.small {
   animation-fill-mode: both;
 }
 
-
 #island {
   width: 80vw;
   max-width: 800px;
@@ -145,23 +162,189 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: all 1s;
 }
 
 section:nth-child(2){
   background: linear-gradient(180deg, rgba(96 109 175) 0%, rgba(9,11,22,1) 100%);
 }
 
-#info {
-  padding-left: 20vw;
+section:nth-child(3){
+  background: linear-gradient(180deg, rgb(9 11 23) 50%, rgb(38 89 97) 90%);
 }
 
+.night-mode section:nth-child(1){
+  background: linear-gradient(180deg, rgb(7 14 60) 39%, rgb(42 55 123) 79%);
+}
 
-@media screen and (min-width: 1440px) {
+.night-mode section:nth-child(2){
+  background: linear-gradient(180deg, rgb(42 55 123) 0%, rgba(9,11,22,1) 100%);
+}
+
+#info .content{
+  margin-left: 20vw;
+  margin-right: 5vw;
+}
+
+#extra .table {
+  margin: 25px;
+  max-width: 800px;
+}
+
+#extra .row {
+  display: grid;
+  grid-template-columns: 150px auto auto;
+  margin-bottom: 25px;
+}
+
+#extra .col-2 {
+  grid-column: span 2;
+}
+
+#extra .experiences,
+#extra .rated {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Coming Soon', Helvetica, sans-serif;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  font-size: .7em;
+}
+
+#extra .rated span {
+  padding-right: 50px;
+}
+
+#extra p {
+  font-size: .7em;
+}
+
+#extra h2 {
+  width: 100%;
+  min-width: 100px;
+  color: white;
+  font-family: 'Bowlby One SC', Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-right: 25px;
+}
+
+#extra .timeline {
+  color: white;
+  font-size: .5em;
+  font-family: 'Coming Soon', Helvetica, sans-serif;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#extra .timeline .dates {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.5px;
+  margin-bottom: 7.5px;
+  position: relative;
+}
+
+#extra .timeline .dates:after {
+  content: '';
+  display: block;
+  width: calc(100% + 10px);
+  border-bottom: 1px solid white;
+  position: absolute;
+  bottom: -2.5px;
+  left: -5px;
+}
+
+#extra .timeline .dates div {
+  position: relative;
+  padding: 0 2.5px;
+}
+
+#extra .timeline .steps {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5px;
+}
+
+#extra .timeline .dates div:after {
+  content: '';
+  display: block;
+  height: 10px;
+  border-left: 1px solid white;
+  position: absolute;
+  bottom: -12px;
+  left: -2.5px;
+}
+
+#extra .timeline .dates div:last-of-type:after {
+  content: '';
+  display: block;
+  height: 10px;
+  border-left: 1px solid white;
+  position: absolute;
+  bottom: -12px;
+  right: -2.5px;
+  left: auto;
+}
+
+#deepanchor {
+  position: absolute;
+  bottom: 50px;
+  right: 5vw;
+}
+
+@media only screen and (max-width: 813px) {
+  html {
+    font-size: 300%;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  #driving {
+    transform: translate(0px, 20vh);
+  }
+
+  #extra .row {
+    grid-template-columns: auto;
+  }
+
+  #bottombar{
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+
+  #info,
+  #extra {
+    font-size: 1.5em;
+  }
+
+}
+
+footer {
+  font-size: .6em;
+  color: white;
+  background: rgb(33 101 113);
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media only screen and (min-width: 1440px) {
   #driving{
     left: 5vw;
   }
 }
 
+.folha-1 { transform-origin: 38% 11%; }
+.folha-2 { transform-origin: 38% 11%; }
+.folha-3 { transform-origin: 46% 14%; }
+.folha-4 { transform-origin: 41% 12%; }
+.folha-5 { transform-origin: 43% 6%; }
+.folha-6 { transform-origin: 42% 15%; }
+.folha-7 { transform-origin: 42% 15%; }
+.folha-8 { transform-origin: 42% 15%; }
+.folha-9 { transform-origin: 42% 15%; }
 
 @keyframes anchor {
   0% {
