@@ -9,7 +9,7 @@
     $light  = $sun['civil_twilight_begin'];
     $dark   = $sun['civil_twilight_end'];
     
-    $daylightClass = (($now > $light && $now < $dark)) ? 'day-mode' : 'night-mode';
+    $daylightclassName = (($now > $light && $now < $dark)) ? 'day-mode' : 'night-mode';
 
     
 ?>
@@ -37,20 +37,20 @@ function App() {
         <div id="bottombar">
           <div id="greeting">
             <p>Hi, nice to see you!</p>
-            <p class="small">(It was really lonely in here.)</p>
+            <p className="small">(It was really lonely in here.)</p>
           </div>
           <a id="godown" href="#info">
-            <div class="anchor">
+            <div className="anchor">
               <Anchor />
             </div>
-            <div class="label">Let's go!</div>
+            <div className="label">Let's go!</div>
           </a>
         </div>
       </section>
 
       <section id="info">
         <Diving />
-        <div class="content">
+        <div className="content">
           <h2>André Pessoa.</h2>
           <p>
             I'm a Brazilian creative developer, and formed designer & animator.
@@ -73,142 +73,142 @@ function App() {
         </div>
       </section>
       <section id="extra">
-        <div class="table">
-          <div class="row" id="intro">
-            <div class=""></div>
-            <div class="col col-2">
+        <div className="table">
+          <div className="row" id="intro">
+            <div className=""></div>
+            <div className="col col-2">
               <p>Are you still here? Great!</p>
               <p>Let's talk a little bit more about me? = D</p>
             </div>
           </div>
-          <div class="row" id="carrer">
-            <div class="">
+          <div className="row" id="carrer">
+            <div className="">
               <h2>Career</h2>
             </div>
-            <div class="col col-2">
-              <div class="timeline">
-                <div class="dates">
+            <div className="col col-2">
+              <div className="timeline">
+                <div className="dates">
                   <div>2001</div>
                   <div>2009</div>
                   <div>2021</div>
                 </div>
-                <div class="steps">
+                <div className="steps">
                   <div>Designer/animator</div>
                   <div>Developer</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class=""></div>
-            <div class="col">
-              <div class="experiences">+ 12 years as developer</div>
-              <div class="experiences">+ 4 years on react</div>
-              <div class="experiences">+ 5 years as animator</div>
-              <div class="experiences">+ 8 years as designer</div>
+          <div className="row">
+            <div className=""></div>
+            <div className="col">
+              <div className="experiences">+ 12 years as developer</div>
+              <div className="experiences">+ 4 years on react</div>
+              <div className="experiences">+ 5 years as animator</div>
+              <div className="experiences">+ 8 years as designer</div>
             </div>
-            <div class="col">
-              <div class="experiences">. hundreds of sites</div>
-              <div class="experiences">. a lot of web apps</div>
-              <div class="experiences">. a custom eLearn CMS</div>
-              <div class="experiences">. SmarTV app</div>
-              <div class="experiences">. a no-code app</div>
+            <div className="col">
+              <div className="experiences">. hundreds of sites</div>
+              <div className="experiences">. a lot of web apps</div>
+              <div className="experiences">. a custom eLearn CMS</div>
+              <div className="experiences">. SmarTV app</div>
+              <div className="experiences">. a no-code app</div>
             </div>
           </div>
-          <div class="row" id="exp">
-            <div class="">
+          <div className="row" id="exp">
+            <div className="">
               <h2>Skills</h2>
             </div>
-            <div class="col">
+            <div className="col">
               <h3>Team</h3>
-              <div class="rated">
+              <div className="rated">
                 <span>Mentor</span>
-                <span class="stars"></span>
+                <span className="stars"></span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Team lead</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={3} stroked={2} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Tech lead</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={3} stroked={2} />
                 </span>
               </div>
             </div>
-            <div class="col">
+            <div className="col">
               <h3>Management</h3>
-              <div class="rated">
+              <div className="rated">
                 <span>SCRUM master</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={4} stroked={1} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Project manager</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={3} stroked={2} />
                 </span>
               </div>
             </div>
           </div>
-          <div class="row" id="techs">
-            <div class="">
+          <div className="row" id="techs">
+            <div className="">
               <h2>Techs</h2>
             </div>
-            <div class="col">
+            <div className="col">
               <h3>Frontend</h3>
-              <div class="rated">
+              <div className="rated">
                 <span>React</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={5} stroked={0} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Angular</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={3} stroked={2} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Vuejs</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={2} stroked={3} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>React Native</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={2} stroked={3} />
                 </span>
               </div>
             </div>
-            <div class="col">
+            <div className="col">
               <h3>Backend</h3>
-              <div class="rated">
+              <div className="rated">
                 <span>PHP</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={4} stroked={1} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Nodejs</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={3} stroked={2} />
                 </span>
               </div>
               <h3>CMS</h3>
-              <div class="rated">
+              <div className="rated">
                 <span>Wordpress</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={4} stroked={1} />
                 </span>
               </div>
-              <div class="rated">
+              <div className="rated">
                 <span>Drupal</span>
-                <span class="stars">
+                <span className="stars">
                   <Stars filled={3} stroked={2} />
                 </span>
               </div>

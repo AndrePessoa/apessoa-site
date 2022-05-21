@@ -211,6 +211,7 @@ section:nth-child(3) {
   display: grid;
   grid-template-columns: 150px 1fr 1fr;
   margin-bottom: 25px;
+  gap: 25px;
 }
 
 #extra .col-2 {
@@ -240,8 +241,9 @@ section:nth-child(3) {
   min-width: 100px;
   color: white;
   font-family: "Bowlby One SC", Helvetica, sans-serif;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-right: 25px;
+  text-align: right;
 }
 
 #extra .timeline {
@@ -318,11 +320,21 @@ section:nth-child(3) {
   }
 
   #driving {
-    transform: translate(0px, 20vh);
+    transform: translate(0px, 20vh) scale(0.9);
+  }
+
+  #info .content {
+    margin-left: 7vw;
+    margin-right: 7vw;
+  }
+
+  #extra h2 {
+    text-align: left;
   }
 
   #extra .row {
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   #bottombar {

@@ -8,6 +8,8 @@ const Island = () => {
   const timer = useGlobalTimer();
 
   useEffect(() => {
+    if (!window.chrome) return;
+
     const dom = ref.current;
 
     // Animate water line
@@ -37,7 +39,15 @@ const Island = () => {
     );
 
     function getPathValues(d) {
-      return d.split(/(?=[a-zA-Z,-])|(?<=[a-zA-Z,-])/gi);
+      const a = d.match(/([-0-9.]+)|(.)/gi);
+      try {
+        // const b = d.split(/(?=[a-zA-Z,-])|(?<=[a-zA-Z,-])/gi);
+        // console.log(a, b);
+      } catch (error) {}
+
+      // console.log(a);
+
+      return a;
     }
 
     function offsetPathsValues(a, b) {

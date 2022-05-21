@@ -9,3 +9,11 @@ export function getSinProportion(frame, cycle) {
 
   return prop;
 }
+
+export function getCosProportion(frame, cycle) {
+  const turn = getCycleProportion(frame, cycle);
+  const rad = turn * 2 * Math.PI;
+  const prop = (Math.cos(rad) + 1) / 2;
+
+  return prop;
+}

@@ -37,25 +37,23 @@ const Diving = () => {
   }, [timer]);
 
   useEffect(() => {
-    function onScrollHandler() {
+    function onScrollHandler(frame) {
       const dom = ref.current;
       const driving = dom;
       const winHeight = window.innerHeight;
-      const limit = Math.max(
-        document.body.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.clientHeight,
-        document.documentElement.scrollHeight,
-        document.documentElement.offsetHeight
-      );
-      const prop = window.scrollY / limit;
-      const paralax = prop * winHeight - winHeight / 3;
-      if (driving) driving.style = `bottom: ${paralax}px`;
-    }
-    window.addEventListener("scroll", onScrollHandler);
+      const prop = (window.scrollY - winHeight) / winHeight;
 
-    return () => window.removeEventListener("scroll", onScrollHandler);
-  }, []);
+      if (driving) {
+        driving.style.top = `${20 + (1 - prop) * 40}%`;
+        driving.style.filter = `brightness(${Math.max(
+          0.15,
+          Math.min(0.7 + prop, 1)
+        )})`;
+      }
+    }
+
+    timer.addAnimation(onScrollHandler);
+  }, [timer]);
 
   return (
     <div id="driving" ref={ref}>
