@@ -4,7 +4,6 @@ import useGlobalTimer from "../hooks/useGlobalTimer";
 
 export default function AnimHelper() {
   const [bars, setBars] = useState([]);
-
   const timer = useGlobalTimer();
 
   useEffect(() => {

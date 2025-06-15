@@ -1,0 +1,128 @@
+#extra .table {
+  margin: 25px;
+  max-width: 800px;
+}
+
+#extra .row {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  margin-bottom: 25px;
+  gap: 25px;
+}
+
+#extra .col-2 {
+  grid-column: span 2;
+}
+
+#extra .experiences,
+#extra .rated {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  font-size: 0.7em;
+}
+
+#extra .rated span {
+  padding-right: 50px;
+}
+
+#extra p {
+  font-size: 0.7em;
+}
+
+#extra h2 {
+  width: 100%;
+  min-width: 100px;
+  color: white;
+  font-family: "Bowlby One SC", Helvetica, sans-serif;
+  font-size: 1em;
+  margin-right: 25px;
+  text-align: right;
+}
+
+#extra .timeline {
+  color: white;
+  font-size: 0.5em;
+  font-family: "Coming Soon", Helvetica, sans-serif;
+  width: 100%;
+  margin-top: 4px;
+}
+
+#extra .timeline .dates {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.5px;
+  margin-bottom: 7.5px;
+  position: relative;
+}
+
+#extra .timeline .dates:after {
+  content: "";
+  display: block;
+  width: calc(100% + 10px);
+  border-bottom: 1px solid white;
+  position: absolute;
+  bottom: -2.5px;
+  left: -5px;
+}
+
+#extra .timeline .dates div {
+  position: relative;
+  padding: 0 2.5px;
+}
+
+#extra .timeline .steps {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5px;
+}
+
+#extra .timeline .dates div:after {
+  content: "";
+  display: block;
+  height: 10px;
+  border-left: 1px solid white;
+  position: absolute;
+  bottom: -12px;
+  left: -2.5px;
+}
+
+#extra .timeline .dates div:last-of-type:after {
+  content: "";
+  display: block;
+  height: 10px;
+  border-left: 1px solid white;
+  position: absolute;
+  bottom: -12px;
+  right: -2.5px;
+  left: auto;
+}
+
+#extra .highlight {
+  color: #d9dba2;
+  font-weight: bolder;
+  padding: 0.5em 0;
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 813px) {
+  #extra h2 {
+    text-align: left;
+  }
+
+  #extra .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #bottombar {
+    flex-direction: column;
+    font-size: 0.55em;
+  }
+
+  #extra {
+    font-size: 0.75em;
+  }
+}

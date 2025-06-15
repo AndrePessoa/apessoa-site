@@ -2,15 +2,20 @@ import React, { useEffect, useRef } from "react";
 import { getSinProportion } from "../helpers";
 import useGlobalTimer from "../hooks/useGlobalTimer";
 import { ReactComponent as IslandSVG } from "../imgs/ilha.svg";
+import { colorInterpolate } from "../helpers/color";
 
-const Island = () => {
+const Island = ({ daylightRef }) => {
   const ref = useRef();
   const timer = useGlobalTimer();
+
+  const control = useRef(0);
 
   useEffect(() => {
     if (!window.chrome) return;
 
     const dom = ref.current;
+
+    const skyElem = document.getElementById("home");
 
     // Animate water line
     const islandTopElem = dom.querySelector("#sand-high");
@@ -71,9 +76,14 @@ const Island = () => {
       islandWavesEffect.setAttribute("dy", calcProp(1, 1) * 6);
 
       const offset = islandAnimationOffset.map((val, i) => {
+        const controlValue =
+          isNaN(parseInt(control.current)) || control.current === undefined
+            ? 0
+            : (-100 + parseInt(control.current) * 2) / 100;
+
         const prop = calcProp(i, (islandAnimationOffset.length - 1) / 2);
-        const aProp = prop * 0.8 + 0.2;
-        return val !== undefined ? val * aProp * 0.7 : val;
+        const aProp = (prop * 0.8 + 0.2) * 0.7 * controlValue;
+        return val !== undefined ? val * aProp : val;
       });
 
       const pathValues = offset
@@ -106,11 +116,29 @@ const Island = () => {
     }
 
     // animation core
+    timer.addAnimation((frame) => {
+      const target = daylightRef?.current || 0;
+      const newControlValue =
+        control.current + (target - control.current) * 0.005;
+      control.current = Math.floor(newControlValue * 100) / 100;
+    });
     timer.addAnimation(drawSeaWave);
     timer.addAnimation(drawLeaft);
-  }, [timer]);
+    timer.addAnimation((frame) => {
+      const day = "rgb(192, 201, 255)";
+      const night = "rgb(33, 37, 66)";
 
-  return <IslandSVG ref={ref} />;
+      const color = colorInterpolate(day, night, control.current / 100);
+
+      skyElem.style.setProperty("--home-sky", color);
+    });
+  }, [daylightRef, timer]);
+
+  return (
+    <>
+      <IslandSVG ref={ref} />
+    </>
+  );
 };
 
 export default Island;

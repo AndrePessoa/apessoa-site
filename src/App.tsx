@@ -2,6 +2,7 @@ import React from "react";
 import ScreenHome from "./screens/home";
 import ScreenAbout from "./screens/about";
 import ScreenResume from "./screens/resume";
+import ScreenPortfolio from "./screens/portfolio";
 
 interface FooterProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -18,6 +19,7 @@ function App() {
     <>
       <ScreenHome />
       <ScreenAbout />
+      <ScreenPortfolio />
       <ScreenResume />
       <Footer />
       <script src="./resources/script.js"></script>

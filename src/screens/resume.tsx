@@ -1,6 +1,13 @@
 import Stars from "../components/stars";
+import "./resume.css";
 
 export default function ScreenResume() {
+  const firstYear = 2001;
+  const middleYear = 2009;
+  const currentYear = new Date().getFullYear();
+  const reactYears = currentYear - 2017;
+  const years = currentYear - middleYear;
+
   return (
     <section id="extra" className="screen">
       <div className="table">
@@ -9,6 +16,10 @@ export default function ScreenResume() {
           <div className="col col-2">
             <p>Are you still here? Great!</p>
             <p>Let's talk a little bit more about me? = D</p>
+            <p> </p>
+            <p className="highlight">
+              <strong>{years} years developing</strong>
+            </p>
           </div>
         </div>
         <div className="row" id="carrer">
@@ -18,9 +29,9 @@ export default function ScreenResume() {
           <div className="col col-2">
             <div className="timeline">
               <div className="dates">
-                <div>2001</div>
-                <div>2009</div>
-                <div>2021</div>
+                <div>{firstYear}</div>
+                <div>{middleYear}</div>
+                <div>{currentYear}</div>
               </div>
               <div className="steps">
                 <div>Designer/animator</div>
@@ -32,12 +43,15 @@ export default function ScreenResume() {
         <div className="row">
           <div className=""></div>
           <div className="col">
-            <div className="experiences">+ 12 years as developer</div>
-            <div className="experiences">+ 4 years on react</div>
+            <div className="experiences">+ {years} years as developer</div>
+            <div className="experiences">
+              + {reactYears} years on React/Next
+            </div>
             <div className="experiences">+ 5 years as animator</div>
             <div className="experiences">+ 8 years as designer</div>
           </div>
           <div className="col">
+            <div className="experiences">. Nextjs page composer</div>
             <div className="experiences">. hundreds of sites</div>
             <div className="experiences">. a lot of web apps</div>
             <div className="experiences">. a custom eLearn CMS</div>
@@ -94,6 +108,12 @@ export default function ScreenResume() {
               <span>React</span>
               <span className="stars">
                 <Stars filled={5} stroked={0} />
+              </span>
+            </div>{" "}
+            <div className="rated">
+              <span>Nextjs</span>
+              <span className="stars">
+                <Stars filled={4} stroked={0} />
               </span>
             </div>
             <div className="rated">

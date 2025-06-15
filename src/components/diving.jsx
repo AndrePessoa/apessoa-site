@@ -4,8 +4,8 @@ import useGlobalTimer from "../hooks/useGlobalTimer";
 import { ReactComponent as DivingSVG } from "../imgs/diving.svg";
 
 const Diving = () => {
-  const timer = useGlobalTimer();
   const ref = useRef();
+  const timer = useGlobalTimer();
 
   useEffect(() => {
     const dom = ref.current;
@@ -46,7 +46,7 @@ const Diving = () => {
       if (driving) {
         driving.style.top = `${20 + (1 - prop) * 40}%`;
         driving.style.filter = `brightness(${Math.max(
-          0.15,
+          0.25,
           Math.min(0.7 + prop, 1)
         )})`;
       }

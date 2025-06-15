@@ -1,0 +1,100 @@
+#home {
+  --home-sky: rgba(192, 201, 255, 1);
+  --mask-stars: black;
+
+  background: linear-gradient(180deg, var(--home-sky) 19%, rgb(96 109 175) 79%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../public/imgs/sky.jpg");
+    background-attachment: fixed;
+    mask-image: linear-gradient(var(--mask-stars) 40%, transparent 60%);
+    z-index: -1;
+    mix-blend-mode: lighten;
+
+    transition: all 2s ease-in-out;
+    animation: stars 100s linear infinite;
+  }
+}
+
+#home .mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 2em;
+  background: color(srgb 0.09 0.1 0.15 / 0.2);
+  backdrop-filter: blur(2px);
+
+  span {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+
+    svg {
+      cursor: pointer;
+
+      height: 40px;
+      width: 40px;
+
+      path {
+        transition: fill 1s ease-in-out;
+      }
+    }
+  }
+
+  &.light .light svg path {
+    fill: white !important;
+  }
+
+  &.dark .dark svg path {
+    fill: white !important;
+  }
+}
+
+#home h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+@media only screen and (max-width: 813px) {
+  #home {
+    .mode {
+      flex-direction: column;
+      border-radius: 2em;
+      padding: 7px;
+      font-size: 0.75em;
+      gap: 0.5em;
+
+      span {
+        height: 30px;
+        width: 30px;
+
+        svg {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes stars {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100vw;
+  }
+}
