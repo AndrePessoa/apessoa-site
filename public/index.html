@@ -47,6 +47,13 @@
     -->
     <title>A. Pessoa</title>
 
+    <!-- Preconnect to external origins to establish early connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- DNS prefetch for analytics (low priority) -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
     <!-- Structured Data for Profile Page -->
     <script type="application/ld+json">
     {
@@ -266,23 +273,98 @@
     }
     </script>
 
+    <!-- Load reset CSS asynchronously as it's not critical for initial paint -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <noscript>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        rel="stylesheet"
+      />
+    </noscript>
+    
+    <!-- Load fonts asynchronously with font-display swap for better performance -->
+        </noscript>
+
+    <!-- Critical CSS inlined to prevent layout shifts -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 250%;
+      }
+      body {
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        height: 200vh;
+        font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-family: "Coming Soon", Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      section.screen {
+        position: relative;
+        min-height: 100svh;
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        color: white;
+        font-family: "Bowlby One SC", Helvetica, sans-serif;
+        text-align: center;
+        font-size: 1.5em;
+        margin: 20px 0;
+      }
+    </style>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Comic+Neue:wght@700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Comic+Neue:wght@700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+    <!-- Inline critical font loading script to avoid FOUT -->
+    <script>
+      // Load fonts with fallbacks to prevent layout shift
+      if ('fonts' in document) {
+        document.fonts.load('1em "Bowlby One SC"');
+        document.fonts.load('1em "Comic Neue"');
+        document.fonts.load('1em "Coming Soon"');
+      }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -293,19 +375,22 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-BJLY329Z6C"
-    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics - Load with low priority -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-BJLY329Z6C");
+      // Load Google Analytics asynchronously after initial load
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-BJLY329Z6C';
+        document.head.appendChild(script);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-BJLY329Z6C");
+      });
     </script>
   </body>
 </html>
