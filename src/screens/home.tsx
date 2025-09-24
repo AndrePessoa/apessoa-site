@@ -64,12 +64,22 @@ export default function ScreenHome() {
     >
       <h1>A. Pessoa </h1>
       <div className={`mode ${mode}`}>
-        <span onClick={() => handleModeChange(Mode.light)} className="light">
-          <Sun />
-        </span>
-        <span onClick={() => handleModeChange(Mode.dark)} className="dark">
-          <Moon />
-        </span>
+        <div className="filled">
+          <span  className="light">
+            <Sun />
+          </span>
+          <span className="dark">
+            <Moon />
+          </span>
+        </div>
+        <div className="stroke">
+          <span onClick={() => handleModeChange(Mode.light)} className="light">
+            <Sun />
+          </span>
+          <span onClick={() => handleModeChange(Mode.dark)} className="dark">
+            <Moon />
+          </span>
+        </div>
       </div>
       <div id="island">
         <Island daylight={daylight} />

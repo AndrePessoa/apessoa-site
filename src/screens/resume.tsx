@@ -15,7 +15,7 @@ export default function ScreenResume() {
           <div className=""></div>
           <div className="col col-2">
             <p>Are you still here? Great!</p>
-            <p>Let's talk a little bit more about me? = D</p>
+            <p>Let's talk a little bit more about me?<span className="block"> = D</span></p>
             <p> </p>
             <p className="highlight">
               <strong>{years} years developing</strong>

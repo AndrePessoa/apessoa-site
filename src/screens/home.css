@@ -26,14 +26,44 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
   border: 1px solid white;
   border-radius: 2em;
   background: color(srgb 0.09 0.1 0.15 / 0.2);
   backdrop-filter: blur(2px);
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: ellipse(20px 20px at 25% 50%);
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+
+    svg {
+      filter: drop-shadow(0px 0px 2px white);
+
+      path {
+        fill: white !important;
+      }
+    }
+  }
+
+  &.dark .filled {
+    clip-path: ellipse(20px 20px at 75% 50%);
+  }
+
+  .stroke {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 
   span {
     display: inline-block;
@@ -51,14 +81,6 @@
       }
     }
   }
-
-  &.light .light svg path {
-    fill: white !important;
-  }
-
-  &.dark .dark svg path {
-    fill: white !important;
-  }
 }
 
 #home h1 {
@@ -71,11 +93,22 @@
 @media only screen and (max-width: 813px) {
   #home {
     .mode {
-      flex-direction: column;
       border-radius: 2em;
-      padding: 7px;
       font-size: 0.75em;
-      gap: 0.5em;
+
+      & > div {
+        margin: 7px;
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      .filled {
+        clip-path: ellipse(15px 15px at 50% 25%);
+      }
+
+      &.dark .filled {
+        clip-path: ellipse(15px 15px at 50% 75%);
+      }
 
       span {
         height: 30px;

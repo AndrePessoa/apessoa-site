@@ -34,7 +34,7 @@ export default function ScreenAbout() {
         </p>
         <br />
         <p>Thank you for coming so deep.</p>
-        <p>I hope to see you soon again! = )</p>
+        <p>I hope to see you soon again! <span className="block"> = )</span></p>
       </div>
     </section>
   );
