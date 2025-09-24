@@ -82,3 +82,19 @@
     width: 100%;
   }
 }
+
+/** remove animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #portfolio .portfolio-list li a {
+    &:hover,
+    &:active {
+      img {
+        transform: none !important;
+      }
+
+      span {
+        transform: none !important;
+      }
+    }
+  }
+}

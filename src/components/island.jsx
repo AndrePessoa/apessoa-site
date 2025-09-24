@@ -4,12 +4,30 @@ import useGlobalTimer from "../hooks/useGlobalTimer";
 import { ReactComponent as IslandSVG } from "../imgs/ilha.svg";
 import { colorInterpolate } from "../helpers/color";
 
-const Island = ({ daylightRef }) => {
+const Island = ({ daylight }) => {
   const ref = useRef();
-  const timer = useGlobalTimer();
-
+  const daylightRef = useRef({ current: daylight });
   const control = useRef(0);
 
+  const timer = useGlobalTimer();
+
+  daylightRef.current = daylight;
+
+  // Non-Animated version for reduced motion preference
+  useEffect(() => {
+    if(timer.isReduced) {
+      const skyElem = document.getElementById("home");
+
+      const day = "rgb(192, 201, 255)";
+      const night = "rgb(33, 37, 66)";
+
+      const color = colorInterpolate(day, night, daylight / 100);
+
+      skyElem.style.setProperty("--home-sky", color);
+    }
+  }, [daylight, timer]);
+
+  // Animation setup
   useEffect(() => {
     if (!window.chrome) return;
 
@@ -116,7 +134,7 @@ const Island = ({ daylightRef }) => {
     }
 
     // animation core
-    timer.addAnimation((frame) => {
+    timer.addAnimation(() => {
       const target = daylightRef?.current || 0;
       const newControlValue =
         control.current + (target - control.current) * 0.005;
@@ -124,7 +142,7 @@ const Island = ({ daylightRef }) => {
     });
     timer.addAnimation(drawSeaWave);
     timer.addAnimation(drawLeaft);
-    timer.addAnimation((frame) => {
+    timer.addAnimation(() => {
       const day = "rgb(192, 201, 255)";
       const night = "rgb(33, 37, 66)";
 

@@ -33,8 +33,7 @@ export default function ScreenPortfolio() {
       <div className="content">
         <h2>Portfolio</h2>
         <p>
-          Here you can find some of my last works, both as a designer and
-          developer.
+          Here you can find some of my last works...
         </p>
         <div className="portfolio-list">
           <ul>
@@ -44,7 +43,7 @@ export default function ScreenPortfolio() {
                 label="Nextjs visual builder"
                 href="https://www.clutch.io/"
                 img="./imgs/clutch.png"
-                alt="André Pessoa logo"
+                alt="Clutch.io - Next-generation visual builder for WordPress screenshot"
               />
             </li>
             <li>
@@ -53,7 +52,7 @@ export default function ScreenPortfolio() {
                 label="Online fencing card game"
                 href="https://www.encarte.apessoa.com/"
                 img="./imgs/fencing.png"
-                alt="André Pessoa logo"
+                alt="Encarte - Online fencing card game interface screenshot"
               />
             </li>
             <li>
@@ -62,7 +61,7 @@ export default function ScreenPortfolio() {
                 label="Torino Po's river rowing rules"
                 href="https://torinoriver.netlify.app/"
                 img="./imgs/torino.png"
-                alt="André Pessoa logo"
+                alt="Torino River - Po River navigation rules and weather data for rowing screenshot"
               />
             </li>
           </ul>

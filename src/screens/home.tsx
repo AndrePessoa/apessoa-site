@@ -45,11 +45,11 @@ function getInitialMode(): Mode {
 
 export default function ScreenHome() {
   const [mode, setMode] = React.useState<Mode>(getInitialMode());
-  const daylightRef = React.useRef<number>(getInitialValue());
+  const [daylight, setDaylight] = React.useState<number>(getInitialValue());
 
   const handleModeChange = (newMode: Mode) => {
     setMode(newMode);
-    daylightRef.current = newMode === Mode.light ? 0 : 100;
+    setDaylight(newMode === Mode.light ? 0 : 100);
   };
 
   return (
@@ -72,7 +72,7 @@ export default function ScreenHome() {
         </span>
       </div>
       <div id="island">
-        <Island daylightRef={daylightRef} />
+        <Island daylight={daylight} />
       </div>
       <div id="bottombar">
         <div id="greeting">

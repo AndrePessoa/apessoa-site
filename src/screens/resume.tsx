@@ -165,7 +165,7 @@ export default function ScreenResume() {
           </div>
         </div>
       </div>
-      <img src="./imgs/deep_anchor.png" id="deepanchor" />
+      <div id="deepanchor" />
     </section>
   );
 }

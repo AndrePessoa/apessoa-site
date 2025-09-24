@@ -27,9 +27,16 @@ export const useScrollInertia = (weight = 1) => {
         context.current.currentScrollYOfset += deltaScroll;
 
         context.current.currentScrollYOfset = Math.min(
-          context.current.currentScrollYOfset,
+          Math.abs(context.current.currentScrollYOfset),
           window.innerHeight * 0.25
         ); // Limit offset to half the viewport height
+
+        if (
+          Math.abs(context.current.currentScrollYOfset) ===
+          window.innerHeight * 0.25
+        ) {
+          console.log("Reached max offset, reversing rotation direction");
+        }
       } else {
         context.current.lastTime = now;
         context.current.lastScrollY = window.scrollY;

@@ -98,3 +98,10 @@
     background-position-x: -100vw;
   }
 }
+
+/** remove animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #home::before {
+    animation: none;
+  }
+}

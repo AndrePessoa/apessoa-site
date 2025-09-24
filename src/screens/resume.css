@@ -107,6 +107,16 @@
   font-size: 1em;
 }
 
+#deepanchor {
+  background-image: url('../imgs/deep_anchor.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: 272px;
+  height: 222px;
+}
+
 @media only screen and (max-width: 813px) {
   #extra h2 {
     text-align: left;

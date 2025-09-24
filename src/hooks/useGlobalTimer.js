@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const DEFAULT_FRAME_RATE = 60; // frames por segundo
+const DEFAULT_FRAME_RATE = 60; // frames per second
 
 // Singleton timer state and animation functions
 const globalState = {
@@ -13,6 +13,8 @@ const globalState = {
   frameRate: DEFAULT_FRAME_RATE,
 };
 const animationFunctions = [];
+
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
 function startGlobalTick() {
   if (globalState.rafId) return;
@@ -35,8 +37,12 @@ function startGlobalTick() {
     });
     globalState.rafId = window.requestAnimationFrame(tick);
   }
-  globalState.rafId = window.requestAnimationFrame(tick);
+
+  if (!isReduced) { // Skip animation if user prefers reduced motion
+    globalState.rafId = window.requestAnimationFrame(tick);
+  }
 }
+
 
 export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
   // Set frameRate only on first call
@@ -46,7 +52,11 @@ export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
   const [paused, setPaused] = useState(globalState.paused);
 
   const addAnimation = useCallback((fn) => {
+    if(isReduced) return false;
+
     animationFunctions.push(fn);
+
+    return true;
   }, []);
 
   const pause = useCallback(() => {
@@ -102,6 +112,7 @@ export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
       pause,
       resume,
       frameRate: globalState.frameRate,
+      isReduced,
     }),
     [addAnimation, play, paused, pause, resume]
   );

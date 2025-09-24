@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="André Pessoa's personal site" />
+    <link rel="canonical" href="https://apessoa.com/" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -45,6 +46,225 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>A. Pessoa</title>
+
+    <!-- Structured Data for Profile Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "dateCreated": "1999-03-01T00:00:00-00:00",
+      "dateModified": "2025-09-24T12:00:00-00:00",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "#main-author",
+        "name": "André Pessoa",
+        "alternateName": "A. Pessoa",
+        "identifier": "andrepessoa",
+        "email": "pessoam.andre@gmail.com",
+        "description": "Manager, fullstack developer and designer specialised in interactivity and process dynamization solutions. Interface Squad Lead and Fullstack Developer at Clutch with 25+ years of experience in development, design, and animation.",
+        "jobTitle": ["Interface Squad Lead", "Senior Frontend Developer", "Fullstack Developer", "Project Manager", "Tech Lead"],
+        "nationality": "Brazilian",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Turim",
+          "addressRegion": "Piemonte",
+          "addressCountry": "IT"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Clutch",
+          "url": "https://clutch.io",
+          "description": "Next-generation visual builder for WordPress"
+        },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Interface Squad Lead and Fullstack Developer",
+            "occupationLocation": {
+              "@type": "Place",
+              "name": "Porto, Portugal"
+            },
+            "skills": ["Next.js", "React.js", "Node.js", "Electron", "UI/UX Design", "Team Leadership"],
+            "startDate": "2020-09",
+            "employer": {
+              "@type": "Organization",
+              "name": "Clutch",
+              "url": "https://clutch.io"
+            }
+          }
+        ],
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Fundação Getulio Vargas",
+            "description": "Master of Business Administration - MBA, Gestão Empresarial"
+          },
+          {
+            "@type": "EducationalOrganization", 
+            "name": "Universidade da Cidade",
+            "description": "Bachelor's degree, Design and Applied Arts"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "UFRJ - Universidade Federal do Rio de Janeiro", 
+            "description": "Bachelor's degree, Design and Applied Arts"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "You, Me & SVG"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Cracking the Case With Flexbox"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "JavaScript Road Trip - Complete"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Accelerating Through Angular 2"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "JavaScript Best Practices"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "MBA in Business Management"
+          }
+        ],
+        "knowsLanguage": [
+          {
+            "@type": "Language",
+            "name": "Portuguese",
+            "proficiencyLevel": "Native"
+          },
+          {
+            "@type": "Language",
+            "name": "English", 
+            "proficiencyLevel": "Professional Working"
+          },
+          {
+            "@type": "Language",
+            "name": "Italian",
+            "proficiencyLevel": "Limited Working"
+          }
+        ],
+        "knowsAbout": [
+          "Game Design",
+          "Game Development", 
+          "Web Application Development",
+          "Frontend Development", 
+          "Backend Development",
+          "React", 
+          "Next.js", 
+          "Angular",
+          "Vue.js",
+          "Node.js",
+          "PHP",
+          "Laravel",
+          "JavaScript", 
+          "TypeScript",
+          "React Native",
+          "Electron",
+          "Team Leadership",
+          "Technical Leadership",
+          "Project Management",
+          "UI/UX Design",
+          "Animation",
+          "3D Modeling",
+          "Adobe Creative Suite"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/andrepessoamendes/",
+          "https://github.com/AndrePessoa",
+          "https://apessoa.com/"
+        ],
+        "url": "https://apessoa.com",
+        "agentInteractionStatistic": [
+          {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/LeadAction",
+            "userInteractionCount": 5,
+            "description": "Years leading development teams"
+          },
+          {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/CreateAction", 
+            "userInteractionCount": 25,
+            "description": "Years of professional development experience"
+          }
+        ]
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "@id": "#clutch-visual-builder",
+          "name": "Clutch Visual Builder",
+          "description": "Next-generation visual builder for WordPress with content editing interfaces and style processing engine",
+          "url": "https://clutch.io/",
+          "author": { "@id": "#main-author" },
+          "about": "Leading development of Next.js based visual builder platform"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "#circo-voador",
+          "name": "Circo Voador",
+          "description": "Entertainment venue website",
+          "url": "http://www.circovoador.com.br/",
+          "author": { "@id": "#main-author" },
+          "about": "Web development project"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "#playa-escondida", 
+          "name": "Playa Escondida",
+          "description": "Tourism and hospitality website",
+          "url": "http://www.playa-escondida.com/",
+          "author": { "@id": "#main-author" },
+          "about": "Web development project"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "#globoplay-smarttv",
+          "name": "Globoplay SmartTV Application",
+          "description": "Streaming application for SmartTV platforms",
+          "author": { "@id": "#main-author" },
+          "about": "SmartTV application development for major Brazilian streaming service"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "#superviz-app",
+          "name": "SuperViz Application", 
+          "description": "Collaborative application platform",
+          "url": "http://superviz.com/",
+          "author": { "@id": "#main-author" },
+          "about": "Vue.js based collaborative application"
+        },
+        {
+          "@type": "CreativeWork", 
+          "@id": "#fencing-game",
+          "name": "Online fencing card game",
+          "description": "Interactive online card game with fencing theme",
+          "url": "https://www.encarte.apessoa.com/",
+          "author": { "@id": "#main-author" },
+          "about": "Web-based gaming application"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "#torino-river",
+          "name": "Torino Po's river rowing rules",
+          "description": "Po River navigation rules and weather data for rowing",
+          "url": "https://torinoriver.netlify.app/",
+          "author": { "@id": "#main-author" },
+          "about": "Informational web application for rowing navigation"
+        }
+      ]
+    }
+    </script>
 
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
