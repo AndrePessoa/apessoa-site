@@ -32,7 +32,6 @@ export default function ScreenAbout() {
           </a>{" "}
           to know more about me.
         </p>
-        <br />
         <p>Thank you for coming so deep.</p>
         <p>I hope to see you soon again! <span className="block"> = )</span></p>
       </div>
