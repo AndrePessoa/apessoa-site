@@ -1,43 +1,119 @@
-# Getting Started with Create React App
+# Andre Pessoa - Personal Portfolio Website
+
+A modern, interactive personal portfolio website built with React and TypeScript. Features an animated island scene with day/night mode switching, smooth animations, and a responsive design showcasing professional work and experience.
+
+## Features
+
+- 🏝️ Interactive animated island with day/night cycle
+- 🌅 Dynamic sun/moon positioning based on real-time
+- ⚡ Smooth animations powered by Anime.js
+- 📱 Responsive design for all devices
+- 🎨 Modern CSS with custom animations
+- 🔧 Built with TypeScript for type safety
+
+## Project Structure
+
+- **Home**: Interactive landing page with animated island scene
+- **About**: Personal introduction and background
+- **Portfolio**: Showcase of projects and work
+- **Resume**: Professional experience and skills
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or pnpm
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/AndrePessoa/apessoa-site.git
+cd apessoa-site
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+pnpm install
+```
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start` or `pnpm dev`
 
-Runs the app in the development mode.\
+Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload automatically when you make edits.\
+Lint errors will be displayed in the console.
 
-### `npm test`
+#### `npm test` or `pnpm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode.
 
-### `npm run build`
+#### `npm run build` or `pnpm build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The build is optimized for the best performance with minified files and hashed filenames.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ready for deployment!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- **React 18** - Modern React with functional components and hooks
+- **TypeScript** - Type-safe JavaScript for better development experience
+- **Anime.js** - Lightweight animation library for smooth interactions
+- **CSS3** - Custom animations and responsive design
+- **Create React App** - Webpack-based build tooling
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Development
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Project Structure
+```
+src/
+├── components/     # Reusable UI components
+├── screens/        # Main page sections
+├── hooks/          # Custom React hooks
+├── helpers/        # Utility functions
+├── imgs/           # SVG icons and images
+└── App.tsx         # Main application component
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Key Components
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Island Component**: Interactive animated scene with day/night transitions
+- **Screen Components**: Modular sections for different content areas
+- **Animation Helpers**: Custom hooks for scroll interactions and global timers
+
+## Deployment
+
+The site is built as a static React application and can be deployed to any static hosting service like:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- AWS S3
+
+Simply run `npm run build` and deploy the contents of the `build/` folder.
+
+## Contributing
+
+This is a personal portfolio project. If you'd like to use it as a template or contribute improvements, feel free to fork the repository.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ by [Andre Pessoa](https://github.com/AndrePessoa)
 
 ## Learn More
 
