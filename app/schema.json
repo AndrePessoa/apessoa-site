@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateCreated": "1999-03-01T00:00:00-00:00",
+  "dateModified": "2025-09-24T12:00:00-00:00",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "#main-author",
+    "name": "André Pessoa",
+    "alternateName": "A. Pessoa",
+    "identifier": "andrepessoa",
+    "email": "pessoam.andre@gmail.com",
+    "description": "Manager, fullstack developer and designer specialised in interactivity and process dynamization solutions. Interface Squad Lead and Fullstack Developer at Clutch with 25+ years of experience in development, design, and animation.",
+    "jobTitle": ["Interface Squad Lead", "Senior Frontend Developer", "Fullstack Developer", "Project Manager", "Tech Lead"],
+    "nationality": "Brazilian",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Turim",
+      "addressRegion": "Piemonte",
+      "addressCountry": "IT"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Clutch",
+      "url": "https://clutch.io",
+      "description": "Next-generation visual builder for WordPress"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/andrepessoamendes/",
+      "https://github.com/AndrePessoa",
+      "https://apessoa.com/"
+    ],
+    "url": "https://apessoa.com"
+  }
+}

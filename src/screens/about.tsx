@@ -1,3 +1,5 @@
+'use client'
+
 import Diving from "../components/diving";
 import { WaterSurfaceCanvas } from "../components/watersurface";
 
@@ -5,7 +7,7 @@ export default function ScreenAbout() {
   return (
     <section id="info" className="screen">
       <WaterSurfaceCanvas />
-      <Diving />
+      <Diving control={0} />
       <div className="content">
         <h2>André Pessoa.</h2>
         <p>

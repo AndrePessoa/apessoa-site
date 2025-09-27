@@ -1,0 +1,62 @@
+<svg viewBox="0 0 28.45 29.13" width="20" height="20" class="rated-star">
+  <defs>
+    <filter id="outline">
+      <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="1"></feMorphology>
+
+      <feFlood flood-color="#fff" flood-opacity="1" result="COLOR"></feFlood>
+      <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+
+      <feMerge>
+        <feMergeNode in="OUTLINE" />
+      </feMerge>
+    </filter>
+    <style>
+      .rated-star polygon {
+        fill: rgba(0, 0, 0, 0.1);
+      }
+
+      .rated-star>g {
+        display: none;
+      }
+
+      .rated-star-1 .star_1 {
+        display: block;
+      }
+
+      .rated-star-2 .star_2 {
+        display: block;
+      }
+
+      .rated-star-3 .star_3 {
+        display: block;
+      }
+
+      .rated-star-4 .star_4 {
+        display: block;
+      }
+
+      .rated-star-5 .star_5 {
+        display: block;
+      }
+
+      .rated-star-filled polygon {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g class="star_1" filter="url(#outline)" data-name="Star 1">
+    <polygon points="13.59 0 25.21 28.23 0 12.18 28.45 9.73 4.5 29.13 13.59 0" />
+  </g>
+  <g class="star_2" filter="url(#outline)" data-name="Star 2">
+    <polygon points="16.21 0.07 24.7 28.65 0.29 8.85 27.95 10.15 4.41 28.54 16.21 0.07" />
+  </g>
+  <g class="star_3" filter="url(#outline)" data-name="Star 3">
+    <polygon points="12.01 0.96 25.87 20.64 0.29 12.68 25.87 6.12 8.55 27.49 12.01 0.96" />
+  </g>
+  <g class="star_4" filter="url(#outline)" data-name="Star 4">
+    <polygon points="18.65 1.62 18.5 26.39 3.61 5.09 24.63 11.03 2.36 23.96 18.65 1.62" />
+  </g>
+  <g class="star_5" filter="url(#outline)" data-name="Star 5">
+    <polygon points="16.44 2.8 20.12 27.49 3.61 7.89 27.2 13.56 2.95 25.43 16.44 2.8" />
+  </g>
+</svg>

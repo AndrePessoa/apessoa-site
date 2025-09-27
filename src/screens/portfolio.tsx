@@ -1,3 +1,5 @@
+'use client'
+
 import { useScrollInertia } from "../hooks/useScrollInertia.js";
 import "./portfolio.css";
 

@@ -1,0 +1,407 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/screens/home.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+#home {
+  --home-sky: rgba(192, 201, 255, 1);
+  --mask-stars: black;
+
+  background: linear-gradient(180deg, var(--home-sky) 19%, rgb(96 109 175) 79%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/imgs/sky.jpg");
+    background-attachment: fixed;
+    -webkit-mask-image: linear-gradient(var(--mask-stars) 40%, transparent 60%);
+            mask-image: linear-gradient(var(--mask-stars) 40%, transparent 60%);
+    mix-blend-mode: lighten;
+
+    transition: all 2s ease-in-out;
+    animation: stars 100s linear infinite;
+  }
+}
+
+#home .mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid white;
+  border-radius: 2em;
+  background: color(srgb 0.09 0.1 0.15 / 0.2);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-clip-path: ellipse(20px 20px at 25% 50%);
+            clip-path: ellipse(20px 20px at 25% 50%);
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+
+    svg {
+      filter: drop-shadow(0px 0px 2px white);
+
+      path {
+        fill: white !important;
+      }
+    }
+  }
+
+  &.dark .filled {
+    -webkit-clip-path: ellipse(20px 20px at 75% 50%);
+            clip-path: ellipse(20px 20px at 75% 50%);
+  }
+
+  .stroke {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  span {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+
+    svg {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+
+      path {
+        transition: fill 1s ease-in-out;
+      }
+    }
+  }
+}
+
+#home h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+@media only screen and (max-width: 813px) {
+  #home {
+    .mode {
+      border-radius: 2em;
+      font-size: 0.75em;
+
+      & > div {
+        margin: 7px;
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      .filled {
+        -webkit-clip-path: ellipse(15px 15px at 50% 25%);
+                clip-path: ellipse(15px 15px at 50% 25%);
+      }
+
+      &.dark .filled {
+        -webkit-clip-path: ellipse(15px 15px at 50% 75%);
+                clip-path: ellipse(15px 15px at 50% 75%);
+      }
+
+      span {
+        height: 30px;
+        width: 30px;
+
+        svg {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes stars {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100vw;
+  }
+}
+
+/** remove animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #home::before {
+    animation: none;
+  }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/watersurface.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.watersurface {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/screens/resume.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+#extra .table {
+  margin: 25px;
+  max-width: 800px;
+}
+
+#extra .row {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  margin-bottom: 25px;
+  grid-gap: 25px;
+  gap: 25px;
+}
+
+#extra .col-2 {
+  grid-column: span 2;
+}
+
+#extra .experiences,
+#extra .rated {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  font-size: 0.7em;
+}
+
+#extra .rated span {
+  padding-right: 50px;
+}
+
+#extra p {
+  font-size: 0.7em;
+}
+
+#extra h2 {
+  width: 100%;
+  min-width: 100px;
+  color: white;
+  font-family: "Bowlby One SC", Helvetica, sans-serif;
+  font-size: 1em;
+  margin-right: 25px;
+  text-align: right;
+}
+
+#extra .timeline {
+  color: white;
+  font-size: 0.5em;
+  font-family: "Coming Soon", Helvetica, sans-serif;
+  width: 100%;
+  margin-top: 4px;
+}
+
+#extra .timeline .dates {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.5px;
+  margin-bottom: 7.5px;
+  position: relative;
+}
+
+#extra .timeline .dates:after {
+  content: "";
+  display: block;
+  width: calc(100% + 10px);
+  border-bottom: 1px solid white;
+  position: absolute;
+  bottom: -2.5px;
+  left: -5px;
+}
+
+#extra .timeline .dates div {
+  position: relative;
+  padding: 0 2.5px;
+}
+
+#extra .timeline .steps {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5px;
+}
+
+#extra .timeline .dates div:after {
+  content: "";
+  display: block;
+  height: 10px;
+  border-left: 1px solid white;
+  position: absolute;
+  bottom: -12px;
+  left: -2.5px;
+}
+
+#extra .timeline .dates div:last-of-type:after {
+  content: "";
+  display: block;
+  height: 10px;
+  border-left: 1px solid white;
+  position: absolute;
+  bottom: -12px;
+  right: -2.5px;
+  left: auto;
+}
+
+#extra .highlight {
+  color: #d9dba2;
+  font-weight: bolder;
+  padding: 0.5em 0;
+  font-size: 1em;
+}
+
+#deepanchor {
+  background-image: url(/_next/static/media/deep_anchor.43677806.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: 272px;
+  height: 222px;
+}
+
+@media only screen and (max-width: 813px) {
+  #extra h2 {
+    text-align: left;
+  }
+
+  #extra .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #bottombar {
+    flex-direction: column;
+    font-size: 0.55em;
+  }
+
+  #extra {
+    font-size: 0.75em;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/screens/portfolio.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+#portfolio .content {
+  max-width: 1280px;
+  padding: 10em 2em;
+}
+
+#portfolio .portfolio-list ul {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2em;
+}
+
+#portfolio .portfolio-list li {
+  display: flex;
+  width: 30%;
+  position: relative;
+  z-index: 100;
+}
+
+#portfolio .portfolio-list li img {
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5),
+    1px 8px 10px 10px rgb(0 0 0 / 20%);
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1.5;
+  transition: all 0.2s ease-in-out;
+}
+
+#portfolio .portfolio-list li span {
+  font-size: 0.75em;
+  text-decoration: none;
+  border-top: 1px solid currentColor;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+#portfolio .portfolio-list li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 813px) {
+  #portfolio .portfolio-list li a {
+    &:hover {
+      img {
+        box-shadow: 0 0 2px rgba(255, 255, 255, 0.75),
+          1px 8px 5px 5px rgb(0 0 0 / 30%);
+        transform: scale(1.1);
+      }
+
+      span {
+        transform: translateY(10%);
+      }
+    }
+
+    &:active {
+      img {
+        transform: scale(1);
+      }
+
+      span {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 813px) {
+  #portfolio .portfolio-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    width: 100%;
+  }
+
+  #portfolio .portfolio-list li {
+    width: 100%;
+  }
+}
+
+/** remove animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #portfolio .portfolio-list li a {
+    &:hover,
+    &:active {
+      img {
+        transform: none !important;
+      }
+
+      span {
+        transform: none !important;
+      }
+    }
+  }
+}

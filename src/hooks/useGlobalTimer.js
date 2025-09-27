@@ -14,10 +14,15 @@ const globalState = {
 };
 const animationFunctions = [];
 
-const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+// Check for reduced motion only on client side
+const getIsReduced = () => {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+};
 
 function startGlobalTick() {
-  if (globalState.rafId) return;
+  if (typeof window === 'undefined' || globalState.rafId) return;
+  
   function tick() {
     if (globalState.paused) return;
     const now = performance.now();
@@ -38,6 +43,7 @@ function startGlobalTick() {
     globalState.rafId = window.requestAnimationFrame(tick);
   }
 
+  const isReduced = getIsReduced();
   if (!isReduced) { // Skip animation if user prefers reduced motion
     globalState.rafId = window.requestAnimationFrame(tick);
   }
@@ -52,6 +58,7 @@ export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
   const [paused, setPaused] = useState(globalState.paused);
 
   const addAnimation = useCallback((fn) => {
+    const isReduced = getIsReduced();
     if(isReduced) return false;
 
     animationFunctions.push(fn);
@@ -60,13 +67,13 @@ export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
   }, []);
 
   const pause = useCallback(() => {
-    if (!globalState.paused) {
+    if (typeof window === 'undefined' || !globalState.paused) {
       globalState.paused = true;
       setPaused(true);
       if (globalState.lastTime) {
         globalState.pauseOffset += performance.now() - globalState.lastTime;
       }
-      if (globalState.rafId) {
+      if (globalState.rafId && typeof window !== 'undefined') {
         window.cancelAnimationFrame(globalState.rafId);
         globalState.rafId = null;
       }
@@ -74,6 +81,7 @@ export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
   }, []);
 
   const resume = useCallback(() => {
+    if (typeof window === 'undefined') return;
     if (globalState.paused) {
       globalState.paused = false;
       setPaused(false);
@@ -112,7 +120,7 @@ export default function useGlobalTimer(frameRate = DEFAULT_FRAME_RATE) {
       pause,
       resume,
       frameRate: globalState.frameRate,
-      isReduced,
+      isReduced: getIsReduced(),
     }),
     [addAnimation, play, paused, pause, resume]
   );
