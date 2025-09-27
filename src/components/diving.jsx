@@ -37,6 +37,36 @@ const Diving = () => {
   }, [timer]);
 
   useEffect(() => {
+    const dom = ref.current;
+    if (!dom) return;
+    
+    // SVG is now available immediately via SVGR
+    const seaFilter = dom.querySelector("#sea-filter");
+    const divingSvg = dom.querySelector("#driving svg");
+
+    function animateFilter(frame) {
+      if (seaFilter) {
+        const prop1 = getSinProportion(frame, 100);
+        const prop2 = getSinProportion(frame + 50, 200);
+
+        seaFilter.setAttribute("x", prop1 * 5);
+        seaFilter.setAttribute("y", prop2 * 5);
+      }
+    }
+
+    function animateDiving(frame) {
+      if (divingSvg) {
+        const prop1 = getSinProportion(frame, 300);
+        const prop2 = getSinProportion(frame + 150, 400);
+
+        const translateX = prop1 * 10;
+        const translateY = prop2 * 15;
+        const rotate = getSinProportion(frame, 500) * 5;
+
+        divingSvg.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`;
+      }
+    }
+
     function onScrollHandler(frame) {
       const dom = ref.current;
       const driving = dom;
@@ -52,6 +82,9 @@ const Diving = () => {
       }
     }
 
+    // Start animations
+    timer.addAnimation(animateFilter);
+    timer.addAnimation(animateDiving);
     timer.addAnimation(onScrollHandler);
   }, [timer]);
 
