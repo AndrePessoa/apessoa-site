@@ -104,24 +104,30 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Comic+Neue:wght@700&display=swap"
-          rel="preload"
-          as="style"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Comic+Neue:wght@700&display=swap"
-          rel="stylesheet"
-        />
+        {/* Preload critical resources to reduce critical path */}
+        <link rel="preload" href="/imgs/anchor.svg" as="image" />
+        <link rel="preload" href="/imgs/sun.svg" as="image" />
+        <link rel="preload" href="/imgs/moon.svg" as="image" />
         
+        {/* Load fonts with optimal display strategy */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap"
-          rel="preload"
-          as="style"
+          href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Comic+Neue:wght@700&family=Coming+Soon&display=swap"
+          rel="stylesheet" 
         />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Comic+Neue:wght@700&family=Coming+Soon&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
+        
+        {/* Preload critical font variants */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="https://fonts.gstatic.com/s/comingsoon/v24/qWcwB624q2L_X1gSUm-D-Ihg.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
         />
 
         <script

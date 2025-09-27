@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Optimize CSS delivery
+  experimental: {
+    optimizeCss: true, // Enable CSS optimization
+  },
+  // Enable gzip compression
+  compress: true,
   webpack(config) {
     // Handle SVG imports with SVGR
     config.module.rules.push({
