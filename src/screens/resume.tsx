@@ -1,3 +1,5 @@
+'use client'
+
 import Stars from "../components/stars";
 import "./resume.css";
 
